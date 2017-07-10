@@ -52,6 +52,7 @@ namespace Banque
             set { _libelleCompte = value; }
         }
         #endregion
+        #region Méthodes
         /// <summary>
         /// Chaine représentant l'objet instancié.
         /// </summary>
@@ -106,5 +107,143 @@ namespace Banque
             if ((object)compteA == null) return (object)compteB != null;
             return !compteA.Equals(compteB);
         }
+        
+        /// <summary>
+        /// Vérifie la validité du Libellé du Compte
+        /// </summary>
+        /// <param name="libelleCompte"></param>
+        /// <returns>Vrai si Libellé Compte valide</returns>
+        public bool IsValidLibelleCompte(string libelleCompte)
+        {
+            if (!string.IsNullOrEmpty(libelleCompte))
+            {
+                return true;
+            }
+            return false;
+        }
+        /// <summary>
+        /// Vérifie la validité du numéro, composé de digit, de lettre Majuscule et de longueur égale ou inférieur à n
+        /// </summary>
+        /// <param name="numeroCompte"></param>
+        /// <param name="n">longueur max du numéro valide</param>
+        /// <returns>Vrai si numero de compte valide</returns>
+        public bool IsValidNumeroCompte(string numeroCompte, int n)
+        {
+            if (!string.IsNullOrEmpty(numeroCompte) && numeroCompte.Length <= n)
+            {
+                foreach (char caractere in numeroCompte)
+                {
+                    if (!char.IsLetterOrDigit(caractere))
+                    {
+                        return false;
+                    }
+                    if (char.IsLetter(caractere) && !char.IsUpper(caractere))
+                    {
+                        return false;
+                    }
+                    return true;
+                }
+            }
+            return false;
+        }
+        /// <summary>
+        /// Vérifie la validité du code
+        /// </summary>
+        /// <param name="code"></param>
+        /// <param name="n">longueur max du code valide</param>
+        /// <returns>Vrai si code n'est composé que de digit et de longueur égale ou inférieure à n</returns>
+        public bool IsValidDigitN(string code, int n)
+        {
+            if (!string.IsNullOrEmpty(code) && code.Length <= n)
+            {
+                foreach (char caractere in code)
+                {
+                    if (!char.IsDigit(caractere))
+                    {
+                        return false;
+                    }
+                    return true;
+                }
+            }
+            return false;
+        }
+        /// <summary>
+        /// Complète la chaine fourni si la longueur est inférieur à n
+        /// </summary>
+        /// <param name="chaineFournie"></param>
+        /// <param name="n">longueur max du code ou numéro valide</param>
+        /// <returns>retourne une string de longueur n à laquelle on a accolé des 0 à gauche</returns>
+        public string completerChaine(string chaineFournie, int n)
+        {
+            while (chaineFournie.Length < n)
+            {
+                chaineFournie = "0" + chaineFournie;
+            }
+            return chaineFournie;
+        }
+        /// <summary>
+        /// Vérifie la validité de la cléRIB
+        /// </summary>
+        /// <param name="codeBanque"></param>
+        /// <param name="codeGuichet"></param>
+        /// <param name="numeroCompte"></param>
+        /// <param name="cleRIB"></param>
+        /// <returns>Vrai si cleRIB est égal à cléControle</returns>
+        public bool IsValidKey(string codeBanque, string codeGuichet, string numeroCompte, string cleRIB)
+        {
+            ulong reste;
+            string cleControle;
+
+            reste = ulong.Parse(codeBanque) % 97;
+            reste = ulong.Parse(reste.ToString() + codeGuichet) % 97;
+            reste = (ulong.Parse(reste.ToString() + convertNumeroCompte(numeroCompte)) * 100) % 97;
+            cleControle = completerChaine((97 - reste).ToString(), 2);
+
+            if (cleControle == cleRIB)
+            {
+                return true;
+            }
+            return false;
+        }
+        /// <summary>
+        /// Convertit une chaine en digit
+        /// </summary>
+        /// <param name="numeroCompte"></param>
+        /// <returns>retourne une chaine composée de digit</returns>
+        public string convertNumeroCompte(string numeroCompte)
+        {
+            string numeroConverti = string.Empty;
+            foreach (char caractere in numeroCompte)
+            {
+                if (char.IsLetter(caractere))
+                {
+                    int i;
+                    Hollerith.Transcoder(caractere, out i);
+                    numeroConverti += i.ToString();
+                }
+                else
+                {
+                    numeroConverti += caractere;
+                }
+            }
+            return numeroConverti;
+        }
+        /// <summary>
+        /// Ajoute à un compte les propriétés transmises en argument
+        /// </summary>
+        /// <param name="codeBanque"></param>
+        /// <param name="codeGuichet"></param>
+        /// <param name="numeroCompte"></param>
+        /// <param name="cleRIB"></param>
+        /// <param name="libelleCompte"></param>
+        public void ajoutProprieteCompte(string codeBanque, string codeGuichet, string numeroCompte, string cleRIB, string libelleCompte)
+        {
+            this.CodeBanque = codeBanque;
+            this.CodeGuichet = codeGuichet;
+            this.Numero = numeroCompte;
+            this.CleRIB = cleRIB;
+            this.LibelleCompte = libelleCompte;
+        }
+        #endregion
     }
 }

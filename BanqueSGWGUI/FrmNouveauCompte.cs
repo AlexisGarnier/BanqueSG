@@ -32,13 +32,14 @@ namespace BanqueWindowsGUI
         { }
         private void btnValider_Click(object sender, EventArgs e)
         {
-            if (IsValidKey(codeBanqueTextBox.Text, codeGuichetTextBox.Text, numeroCompteTextBox.Text, cleRIBTextBox.Text))
+            if (nouveauCompte.IsValidKey(codeBanqueTextBox.Text, codeGuichetTextBox.Text, numeroCompteTextBox.Text, cleRIBTextBox.Text))
             {
-                ajoutProprieteCompte(codeBanqueTextBox.Text, codeGuichetTextBox.Text, numeroCompteTextBox.Text, cleRIBTextBox.Text,libellécompteTextBox.Text);
+                nouveauCompte.ajoutProprieteCompte(codeBanqueTextBox.Text, codeGuichetTextBox.Text, numeroCompteTextBox.Text, cleRIBTextBox.Text,libellécompteTextBox.Text);
                 DialogResult = DialogResult.OK;
             }
             else
             {
+                MessageBox.Show(string.Format("La cléRIB ne correspond pas aux données renseignées. Vérifiez la validité des données", MessageBoxButtons.OK));
                 DialogResult = DialogResult.None;
             }
         }
@@ -48,9 +49,9 @@ namespace BanqueWindowsGUI
         }
         private void codeBanqueTextBox_Validating(object sender, CancelEventArgs e)
         {
-            if (IsValidDigitN(codeBanqueTextBox.Text, 5))
+            if (nouveauCompte.IsValidDigitN(codeBanqueTextBox.Text, 5))
             {
-                codeBanqueTextBox.Text = completerChaine(codeBanqueTextBox.Text, 5);
+                codeBanqueTextBox.Text = nouveauCompte.completerChaine(codeBanqueTextBox.Text, 5);
                 errorProvider1.SetError(codeBanqueTextBox, string.Empty);
             }
             else
@@ -61,9 +62,9 @@ namespace BanqueWindowsGUI
         }
         private void codeGuichetTextBox_Validating(object sender, CancelEventArgs e)
         {
-            if (IsValidDigitN(codeGuichetTextBox.Text, 5))
+            if (nouveauCompte.IsValidDigitN(codeGuichetTextBox.Text, 5))
             {
-                codeGuichetTextBox.Text = completerChaine(codeGuichetTextBox.Text, 5);
+                codeGuichetTextBox.Text = nouveauCompte.completerChaine(codeGuichetTextBox.Text, 5);
                 errorProvider1.SetError(codeGuichetTextBox, string.Empty);
             }
             else
@@ -74,9 +75,9 @@ namespace BanqueWindowsGUI
         }
         private void numeroCompteTextBox_Validating(object sender, CancelEventArgs e)
         {
-            if (IsValidNumeroCompte(numeroCompteTextBox.Text, 11))
+            if (nouveauCompte.IsValidNumeroCompte(numeroCompteTextBox.Text, 11))
             {
-                numeroCompteTextBox.Text = completerChaine(numeroCompteTextBox.Text, 11);
+                numeroCompteTextBox.Text = nouveauCompte.completerChaine(numeroCompteTextBox.Text, 11);
                 errorProvider1.SetError(numeroCompteTextBox, string.Empty);
             }
             else
@@ -87,7 +88,7 @@ namespace BanqueWindowsGUI
         }
         private void cleRIBTextBox_Validating(object sender, CancelEventArgs e)
         {
-            if (IsValidDigitN(cleRIBTextBox.Text, 2))
+            if (nouveauCompte.IsValidDigitN(cleRIBTextBox.Text, 2))
             {
                 errorProvider1.SetError(cleRIBTextBox, string.Empty);
             }
@@ -99,7 +100,7 @@ namespace BanqueWindowsGUI
         }
         private void libellécompteTextBox_Validating(object sender, CancelEventArgs e)
         {
-            if (IsValidLibelleCompte(libellécompteTextBox.Text))
+            if (nouveauCompte.IsValidLibelleCompte(libellécompteTextBox.Text))
             {
                 errorProvider1.SetError(libellécompteTextBox, string.Empty);
             }
@@ -110,143 +111,6 @@ namespace BanqueWindowsGUI
             }
         }
         #endregion
-        #region Méthodes
-        /// <summary>
-        /// Vérifie la validité du Libellé du Compte
-        /// </summary>
-        /// <param name="libelleCompte"></param>
-        /// <returns></returns>
-        private bool IsValidLibelleCompte(string libelleCompte)
-        {
-            if (!string.IsNullOrEmpty(libelleCompte))
-            {
-                return true;
-            }
-            return false;
-        }
-        /// <summary>
-        /// Vérifie la validité du numéro, composé de digit, de lettre Majuscule et de longueur égale ou inférieur à n
-        /// </summary>
-        /// <param name="numeroCompte"></param>
-        /// <param name="n">longueur max du numéro valide</param>
-        /// <returns></returns>
-        private bool IsValidNumeroCompte(string numeroCompte, int n)
-        {
-            if (!string.IsNullOrEmpty(numeroCompte) && numeroCompte.Length <= n)
-            {
-                foreach (char caractere in numeroCompte)
-                {
-                    if (!char.IsLetterOrDigit(caractere))
-                    {
-                        return false;
-                    }
-                    if (char.IsLetter(caractere) && !char.IsUpper(caractere))
-                    {
-                        return false;
-                    }
-                    return true;
-                }
-            }
-            return false;
-        }
-        /// <summary>
-        /// Vérifie la validité du code, composé de digit et de longueur égale ou inférieure à n
-        /// </summary>
-        /// <param name="code"></param>
-        /// <param name="n">longueur max du code valide</param>
-        /// <returns></returns>
-        private bool IsValidDigitN(string code, int n)
-        {
-            if (!string.IsNullOrEmpty(code) && code.Length <= n)
-            {
-                foreach (char caractere in code)
-                {
-                    if (!char.IsDigit(caractere))
-                    {
-                        return false;
-                    }
-                    return true;
-                }
-            }
-            return false;
-        }
-        /// <summary>
-        /// Complète la chaine fourni si la longueur est inférieur à n , retourne une string de longueur n à laquelle on a accolé des 0 à gauche
-        /// </summary>
-        /// <param name="chaineFournie"></param>
-        /// <param name="n">longueur max du code ou numéro valide</param>
-        /// <returns></returns>
-        private string completerChaine(string chaineFournie, int n)
-        {
-            while (chaineFournie.Length < n)
-            {
-                chaineFournie = "0" + chaineFournie;
-            }
-            return chaineFournie;
-        }
-        /// <summary>
-        /// Vérifie la validité de la cléRIB
-        /// </summary>
-        /// <param name="codeBanque"></param>
-        /// <param name="codeGuichet"></param>
-        /// <param name="numeroCompte"></param>
-        /// <param name="cleRIB"></param>
-        /// <returns></returns>
-        private bool IsValidKey(string codeBanque, string codeGuichet, string numeroCompte, string cleRIB)
-        {
-            ulong reste;
-            string cleControle;
-
-            reste = ulong.Parse(codeBanque) % 97;
-            reste = ulong.Parse(reste.ToString() + codeGuichet) % 97;
-            reste = (ulong.Parse(reste.ToString() + convertNumeroCompte(numeroCompte)) * 100) % 97;
-            cleControle = completerChaine((97 - reste).ToString(),2);
-
-            if (cleControle == cleRIB)
-            {
-                return true;
-            }
-            return false;
-        }
-        /// <summary>
-        /// Convertit le numéro de compte en digit pour calculer la clé de controle
-        /// </summary>
-        /// <param name="numeroCompte"></param>
-        /// <returns></returns>
-        private string convertNumeroCompte(string numeroCompte)
-        {
-            string numeroConverti = string.Empty;
-            foreach (char caractere in numeroCompte)
-            {
-                if (char.IsLetter(caractere))
-                {
-                    int i;
-                    Hollerith.Transcoder(caractere, out i);
-                    numeroConverti += i.ToString();
-                }
-                else
-                {
-                    numeroConverti += caractere;
-                }
-            }
-            return numeroConverti;
-        }
-        /// <summary>
-        /// Ajoute au nouveau compte les propriétés transmises en argument
-        /// </summary>
-        /// <param name="codeBanque"></param>
-        /// <param name="codeGuichet"></param>
-        /// <param name="numeroCompte"></param>
-        /// <param name="cleRIB"></param>
-        /// <param name="libelleCompte"></param>
-        private void ajoutProprieteCompte(string codeBanque, string codeGuichet, string numeroCompte, string cleRIB,string libelleCompte)
-        {
-            nouveauCompte.CodeBanque = codeBanque;
-            nouveauCompte.CodeGuichet = codeGuichet;
-            nouveauCompte.Numero = numeroCompte;
-            nouveauCompte.CleRIB = cleRIB;
-            nouveauCompte.LibelleCompte = libelleCompte;
-        }
-        #endregion
+       
     }
 }
