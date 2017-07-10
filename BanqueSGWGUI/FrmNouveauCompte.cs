@@ -27,12 +27,9 @@ namespace BanqueWindowsGUI
         {
             nouveauCompte = compte;
         }
-
+        #region Evenements
         private void FrmNouveauCompte_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        { }
         private void btnValider_Click(object sender, EventArgs e)
         {
             if (IsValidKey(codeBanqueTextBox.Text, codeGuichetTextBox.Text, numeroCompteTextBox.Text, cleRIBTextBox.Text))
@@ -45,14 +42,10 @@ namespace BanqueWindowsGUI
                 DialogResult = DialogResult.None;
             }
         }
-
-       
-
         private void btnAbandonner_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
         }
-
         private void codeBanqueTextBox_Validating(object sender, CancelEventArgs e)
         {
             if (IsValidDigitN(codeBanqueTextBox.Text, 5))
@@ -100,7 +93,7 @@ namespace BanqueWindowsGUI
             }
             else
             {
-                errorProvider1.SetError(cleRIBTextBox, "Clé RIB Invalide, ne peut être vide, doit comporter que des chiffres, lougueur maximum 2 caractères");
+                errorProvider1.SetError(cleRIBTextBox, "Clé RIB Invalide, ne peut être vide, ne doit comporter que des chiffres, lougueur maximum 2 caractères");
                 e.Cancel = true;
             }
         }
@@ -116,7 +109,8 @@ namespace BanqueWindowsGUI
                 e.Cancel = true;
             }
         }
-
+        #endregion
+        #region Méthodes
         /// <summary>
         /// Vérifie la validité du Libellé du Compte
         /// </summary>
@@ -130,7 +124,6 @@ namespace BanqueWindowsGUI
             }
             return false;
         }
-
         /// <summary>
         /// Vérifie la validité du numéro, composé de digit, de lettre Majuscule et de longueur égale ou inférieur à n
         /// </summary>
@@ -156,7 +149,6 @@ namespace BanqueWindowsGUI
             }
             return false;
         }
-
         /// <summary>
         /// Vérifie la validité du code, composé de digit et de longueur égale ou inférieure à n
         /// </summary>
@@ -239,6 +231,14 @@ namespace BanqueWindowsGUI
             }
             return numeroConverti;
         }
+        /// <summary>
+        /// Ajoute au nouveau compte les propriétés transmises en argument
+        /// </summary>
+        /// <param name="codeBanque"></param>
+        /// <param name="codeGuichet"></param>
+        /// <param name="numeroCompte"></param>
+        /// <param name="cleRIB"></param>
+        /// <param name="libelleCompte"></param>
         private void ajoutProprieteCompte(string codeBanque, string codeGuichet, string numeroCompte, string cleRIB,string libelleCompte)
         {
             nouveauCompte.CodeBanque = codeBanque;
@@ -247,5 +247,6 @@ namespace BanqueWindowsGUI
             nouveauCompte.CleRIB = cleRIB;
             nouveauCompte.LibelleCompte = libelleCompte;
         }
+        #endregion
     }
 }
