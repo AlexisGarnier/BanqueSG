@@ -50,7 +50,7 @@ namespace BanqueWindowsGUI
         {
             if (IsValidDigitN(codeBanqueTextBox.Text, 5))
             {
-                codeBanqueTextBox.Text = completerCodeNumero(codeBanqueTextBox.Text, 5);
+                codeBanqueTextBox.Text = completerChaine(codeBanqueTextBox.Text, 5);
                 errorProvider1.SetError(codeBanqueTextBox, string.Empty);
             }
             else
@@ -63,7 +63,7 @@ namespace BanqueWindowsGUI
         {
             if (IsValidDigitN(codeGuichetTextBox.Text, 5))
             {
-                codeGuichetTextBox.Text = completerCodeNumero(codeGuichetTextBox.Text, 5);
+                codeGuichetTextBox.Text = completerChaine(codeGuichetTextBox.Text, 5);
                 errorProvider1.SetError(codeGuichetTextBox, string.Empty);
             }
             else
@@ -76,7 +76,7 @@ namespace BanqueWindowsGUI
         {
             if (IsValidNumeroCompte(numeroCompteTextBox.Text, 11))
             {
-                numeroCompteTextBox.Text = completerCodeNumero(numeroCompteTextBox.Text, 11);
+                numeroCompteTextBox.Text = completerChaine(numeroCompteTextBox.Text, 11);
                 errorProvider1.SetError(numeroCompteTextBox, string.Empty);
             }
             else
@@ -171,18 +171,18 @@ namespace BanqueWindowsGUI
             return false;
         }
         /// <summary>
-        /// Complète le code ou numéro fourni si inférieur à n , retourne une string de n digit complétée par des 0
+        /// Complète la chaine fourni si la longueur est inférieur à n , retourne une string de longueur n à laquelle on a accolé des 0 à gauche
         /// </summary>
-        /// <param name="codeBanqueouGuichet"></param>
+        /// <param name="chaineFournie"></param>
         /// <param name="n">longueur max du code ou numéro valide</param>
         /// <returns></returns>
-        private string completerCodeNumero(string codeBanqueouGuichet, int n)
+        private string completerChaine(string chaineFournie, int n)
         {
-            while (codeBanqueouGuichet.Length < n)
+            while (chaineFournie.Length < n)
             {
-                codeBanqueouGuichet = "0" + codeBanqueouGuichet;
+                chaineFournie = "0" + chaineFournie;
             }
-            return codeBanqueouGuichet;
+            return chaineFournie;
         }
         /// <summary>
         /// Vérifie la validité de la cléRIB
@@ -194,13 +194,13 @@ namespace BanqueWindowsGUI
         /// <returns></returns>
         private bool IsValidKey(string codeBanque, string codeGuichet, string numeroCompte, string cleRIB)
         {
-            long reste;
+            ulong reste;
             string cleControle;
 
-            reste = long.Parse(codeBanque) % 97;
-            reste = long.Parse(reste.ToString() + codeGuichet) % 97;
-            reste = (long.Parse(reste.ToString() + convertNumeroCompte(numeroCompte)) * 100) % 97;
-            cleControle = completerCodeNumero((97 - reste).ToString(),2);
+            reste = ulong.Parse(codeBanque) % 97;
+            reste = ulong.Parse(reste.ToString() + codeGuichet) % 97;
+            reste = (ulong.Parse(reste.ToString() + convertNumeroCompte(numeroCompte)) * 100) % 97;
+            cleControle = completerChaine((97 - reste).ToString(),2);
 
             if (cleControle == cleRIB)
             {
