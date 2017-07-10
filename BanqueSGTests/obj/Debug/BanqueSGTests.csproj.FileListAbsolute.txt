@@ -1,0 +1,16 @@
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGTests\obj\Debug\BanqueSGTests.csprojResolveAssemblyReference.cache
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGTests\bin\Debug\BanqueSGTests.exe.config
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGTests\bin\Debug\BanqueSGTests.exe
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGTests\bin\Debug\BanqueSGTests.pdb
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGTests\bin\Debug\BanqueSGDLL.dll
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGTests\bin\Debug\BanqueSGDLL.pdb
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGTests\obj\Debug\BanqueSGTests.exe
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGTests\obj\Debug\BanqueSGTests.pdb
+E:\CDIAlexis\BanqueSG\BanqueSGTests\bin\Debug\BanqueSGTests.exe.config
+E:\CDIAlexis\BanqueSG\BanqueSGTests\bin\Debug\BanqueSGTests.exe
+E:\CDIAlexis\BanqueSG\BanqueSGTests\bin\Debug\BanqueSGTests.pdb
+E:\CDIAlexis\BanqueSG\BanqueSGTests\bin\Debug\BanqueSGDLL.dll
+E:\CDIAlexis\BanqueSG\BanqueSGTests\bin\Debug\BanqueSGDLL.pdb
+E:\CDIAlexis\BanqueSG\BanqueSGTests\obj\Debug\BanqueSGTests.csprojResolveAssemblyReference.cache
+E:\CDIAlexis\BanqueSG\BanqueSGTests\obj\Debug\BanqueSGTests.exe
+E:\CDIAlexis\BanqueSG\BanqueSGTests\obj\Debug\BanqueSGTests.pdb

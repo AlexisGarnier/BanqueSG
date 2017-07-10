@@ -1,0 +1,10 @@
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGDLL\bin\Debug\BanqueSGDLL.dll
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGDLL\bin\Debug\BanqueSGDLL.pdb
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGDLL\obj\Debug\BanqueSGDLL.dll
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGDLL\obj\Debug\BanqueSGDLL.pdb
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGDLL\obj\Debug\BanqueSGDLL.csprojResolveAssemblyReference.cache
+E:\CDIAlexis\BanqueSG\BanqueSGDLL\bin\Debug\BanqueSGDLL.dll
+E:\CDIAlexis\BanqueSG\BanqueSGDLL\bin\Debug\BanqueSGDLL.pdb
+E:\CDIAlexis\BanqueSG\BanqueSGDLL\obj\Debug\BanqueSGDLL.csprojResolveAssemblyReference.cache
+E:\CDIAlexis\BanqueSG\BanqueSGDLL\obj\Debug\BanqueSGDLL.dll
+E:\CDIAlexis\BanqueSG\BanqueSGDLL\obj\Debug\BanqueSGDLL.pdb

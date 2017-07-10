@@ -1,0 +1,24 @@
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGWGUI\obj\Debug\BanqueSGWGUI.csprojResolveAssemblyReference.cache
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGWGUI\obj\Debug\BanqueSGWGUI.csproj.GenerateResource.Cache
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGWGUI\bin\Debug\BanqueSGWGUI.exe.config
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGWGUI\obj\Debug\BanqueWindowsGUI.FrmNouveauCompte.resources
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGWGUI\obj\Debug\BanqueSGWGUI.FrmListeComptes.resources
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGWGUI\obj\Debug\BanqueWindowsGUI.Properties.Resources.resources
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGWGUI\bin\Debug\BanqueSGWGUI.exe
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGWGUI\bin\Debug\BanqueSGWGUI.pdb
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGWGUI\bin\Debug\BanqueSGDLL.dll
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGWGUI\bin\Debug\BanqueSGDLL.pdb
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGWGUI\obj\Debug\BanqueSGWGUI.exe
+E:\Parcours CDI\M7 - Evaluation Cours formation\BanqueSG\BanqueSGWGUI\obj\Debug\BanqueSGWGUI.pdb
+E:\CDIAlexis\BanqueSG\BanqueSGWGUI\bin\Debug\BanqueSGWGUI.exe.config
+E:\CDIAlexis\BanqueSG\BanqueSGWGUI\obj\Debug\BanqueSGWGUI.exe
+E:\CDIAlexis\BanqueSG\BanqueSGWGUI\obj\Debug\BanqueSGWGUI.pdb
+E:\CDIAlexis\BanqueSG\BanqueSGWGUI\bin\Debug\BanqueSGWGUI.exe
+E:\CDIAlexis\BanqueSG\BanqueSGWGUI\bin\Debug\BanqueSGWGUI.pdb
+E:\CDIAlexis\BanqueSG\BanqueSGWGUI\bin\Debug\BanqueSGDLL.dll
+E:\CDIAlexis\BanqueSG\BanqueSGWGUI\bin\Debug\BanqueSGDLL.pdb
+E:\CDIAlexis\BanqueSG\BanqueSGWGUI\obj\Debug\BanqueSGWGUI.csprojResolveAssemblyReference.cache
+E:\CDIAlexis\BanqueSG\BanqueSGWGUI\obj\Debug\BanqueSGWGUI.FrmListeComptes.resources
+E:\CDIAlexis\BanqueSG\BanqueSGWGUI\obj\Debug\BanqueWindowsGUI.FrmNouveauCompte.resources
+E:\CDIAlexis\BanqueSG\BanqueSGWGUI\obj\Debug\BanqueWindowsGUI.Properties.Resources.resources
+E:\CDIAlexis\BanqueSG\BanqueSGWGUI\obj\Debug\BanqueSGWGUI.csproj.GenerateResource.Cache

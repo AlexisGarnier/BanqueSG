@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BanqueSGDLL", "BanqueSGDLL\BanqueSGDLL.csproj", "{4108C86E-42CB-48E4-8336-DA72DEEE0110}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BanqueSGTests", "BanqueSGTests\BanqueSGTests.csproj", "{1F3E1D7D-009B-455B-9292-EE488B482CAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BanqueSGWGUI", "BanqueSGWGUI\BanqueSGWGUI.csproj", "{D0159651-57EF-4AF6-8266-FA97A3161014}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4108C86E-42CB-48E4-8336-DA72DEEE0110}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4108C86E-42CB-48E4-8336-DA72DEEE0110}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4108C86E-42CB-48E4-8336-DA72DEEE0110}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4108C86E-42CB-48E4-8336-DA72DEEE0110}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F3E1D7D-009B-455B-9292-EE488B482CAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F3E1D7D-009B-455B-9292-EE488B482CAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F3E1D7D-009B-455B-9292-EE488B482CAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F3E1D7D-009B-455B-9292-EE488B482CAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0159651-57EF-4AF6-8266-FA97A3161014}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0159651-57EF-4AF6-8266-FA97A3161014}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0159651-57EF-4AF6-8266-FA97A3161014}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0159651-57EF-4AF6-8266-FA97A3161014}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
